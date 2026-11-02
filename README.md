@@ -11,8 +11,15 @@ Parte gráfica totalmente gerada em IA, não tinha ideia de como fazer.
 
 ## Como compilar e executar
 
-Para compilar a parte gráfica é necessária a biblioteca raylib e recomendo usar o makefile apenas caso queira ver a parte gráfica.
+O projeto usa um Makefile. Na pasta do projeto, execute:
 
+```bash
+make            
+make run       
+make clean     
+```
+
+**Versão em texto
 ```bash
 g++ main_game.cpp -o main_game.exe
 ./main_game.exe
