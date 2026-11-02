@@ -1,14 +1,4 @@
-# ============================================================
-#  Makefile - Tower defense
-#
-#  make            compila as duas versões (gráfica e texto)
-#  make run        compila e roda a versão gráfica (raylib)
-#  make run-texto  compila e roda a versão de texto
-#  make clean      apaga os executáveis
-#
-#  Se a raylib não estiver em um caminho padrão, informe onde ela está:
-#    make RAYLIB_DIR=/caminho/para/raylib
-# ============================================================
+
 
 CXX      ?= g++
 CXXFLAGS ?= -std=c++17 -Wall -Wextra -O2
@@ -16,10 +6,10 @@ CXXFLAGS ?= -std=c++17 -Wall -Wextra -O2
 TARGET_GRAFICO = jogo
 TARGET_TEXTO   = jogo_texto
 
-# Cabeçalhos que afetam a compilação (se algum mudar, recompila tudo)
+
 HEADERS = armas.h inimigos.h mapa.h jogador.h rodadas.h grafico.h
 
-# ---------- Detecção de sistema e bibliotecas da raylib ----------
+
 ifeq ($(OS),Windows_NT)
     RAYLIB_LIBS = -lraylib -lopengl32 -lgdi32 -lwinmm
     EXE = .exe
@@ -34,13 +24,13 @@ else
     endif
 endif
 
-# Caminho opcional para a raylib instalada a partir do código-fonte
+
 ifneq ($(RAYLIB_DIR),)
     INCLUDES += -I$(RAYLIB_DIR)/include
     LDFLAGS  += -L$(RAYLIB_DIR)/lib
 endif
 
-# ---------- Alvos ----------
+
 .PHONY: all run run-texto clean
 
 all: $(TARGET_GRAFICO)$(EXE) $(TARGET_TEXTO)$(EXE)
