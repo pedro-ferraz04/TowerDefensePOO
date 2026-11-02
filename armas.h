@@ -35,6 +35,9 @@ public:
     int getPosicaoY() const {
         return posicaoY;
     }
+    int getAlcance() const {
+        return alcance;
+    }
     int getDano() const {
         return dano;
     }

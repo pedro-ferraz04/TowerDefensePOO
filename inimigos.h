@@ -9,12 +9,13 @@ using namespace std;
 class Inimigo {
 protected:
     size_t indicePos = 0;
-    int vida, dano, recompensa;
+    int vida, vidaMax, dano, recompensa;
     vector<pair<int, int>> posicao;
 
 public:
     Inimigo(int v, int d, int r, vector<pair<int, int>> pos) {
         vida = v;
+        vidaMax = v;
         dano = d;
         recompensa = r;
         posicao = pos;
@@ -31,6 +32,9 @@ public:
     }
     int getPosicaoY() const {
         return posicao[indicePos].second;
+    }
+    int getVidaMax() const {
+        return vidaMax;
     }
     int getVida() const {
         return vida;
